@@ -63,15 +63,15 @@ function filterFunctionality(e) {
 }
 
 //searching field 
+
 const input = document.getElementById('blank')
 const button = document.getElementById('search')
-const beerList = document.querySelector('.beer-name div')
+const beerList = document.querySelector('.beer-list div')
 const form = document.querySelector('form')
 const details = document.getElementById('details')
 
-
-async function getBeers(beer_name) {
-  const url = `https://api.punkapi.com/v2/beers/${beer_name}`
+async function getBrand(beer_name = 'Buzz') {
+  const url = `https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`
 
   try {
     const res = await fetch(url)
@@ -83,49 +83,15 @@ async function getBeers(beer_name) {
     console.log('');
   }
 }
-getBeers('')
+getBrand()
 
-form.addEventListener('submit', async e => {
-  e.preventDefault()
-  const beer = await getBeers(input.value)
-  console.log(beer)
-  renderList(beer)
-})
-
-async function getBeerDetails(id) {
-  const res = await fetch(url)
-  const json = await res.json()
-  return json
-}
-
-function renderList(beer) {
-  document.querySelectorAll('p').forEach(p => p.remove())
-  for (const details of beer) {
-    const { Poster, punkapi } = beer
-    const div = document.createElement('div')
-    div.classList.add('beer')
-    div.style = `
-       display: flex
-       flex-direction: column
-    `
-    const handleCLick = async () => {
-      const info = await getBeerDetails(punkapi)
-      console.log(info)
-    }
-
-    const img = document.createElement('img')
-    img.src = Poster
-
-    const p = document.createElement('p')
-    const span = document.createElement('span')
-    span.textContent = movie.Title
-    p.append(span)
-
-    img.addEventListener('click', () => handleCLick(punkapi))
-    span.addEventListener('click', () => handleCLick(punkapi))
-
-
-    div.append(img, p)
-    beerList.append(div)
-  }
-}
+// const pick = 0
+// switch (url) {
+//   case beer_name:
+//     console.log(`https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`)
+//   case ingrediants:
+//     console.log(`https://api.punkapi.com/v2/beers?&beer_name=${hops}`);
+//   case flavors: 
+//     console.log(`https://api.punkapi.com/v2/beers?&beer_name=${id}`);
+// }
+// pick()
