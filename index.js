@@ -26,28 +26,11 @@ function showSlides(n) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-  captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 
-async function getBeers(beer_name) {
-  const url = `https://api.punkapi.com/v2/beers/${beer_name}`
-
-  try {
-    const res = await fetch(url)
-    const json = await res.json()
-    console.log(json);
-    return json;
-
-  } catch (error) {
-    console.log('');
-  }
-}
-getBeers('')
-
-//setting up the 2 initial states to hold the search strings...
-const [searchString, setSearchString] = useState('')
-const [searchResult, setSearchResult] = useState([])
+//might be able to delete .....setting up the 2 initial states to hold the search strings...
+// const [searchString, setSearchString] = useState('')
+// const [searchResult, setSearchResult] = useState([])
 
 // search by name function
 const search = document.querySelector('#search');
@@ -79,3 +62,70 @@ function filterFunctionality(e) {
 
 }
 
+//searching field 
+const input = document.getElementById('blank')
+const button = document.getElementById('search')
+const beerList = document.querySelector('.beer-name div')
+const form = document.querySelector('form')
+const details = document.getElementById('details')
+
+
+async function getBeers(beer_name) {
+  const url = `https://api.punkapi.com/v2/beers/${beer_name}`
+
+  try {
+    const res = await fetch(url)
+    const json = await res.json()
+    console.log(json);
+    return json;
+
+  } catch (error) {
+    console.log('');
+  }
+}
+getBeers('')
+
+form.addEventListener('submit', async e => {
+  e.preventDefault()
+  const beer = await getBeers(input.value)
+  console.log(beer)
+  renderList(beer)
+})
+
+async function getBeerDetails(id) {
+  const res = await fetch(url)
+  const json = await res.json()
+  return json
+}
+
+function renderList(beer) {
+  document.querySelectorAll('p').forEach(p => p.remove())
+  for (const details of beer) {
+    const { Poster, punkapi } = beer
+    const div = document.createElement('div')
+    div.classList.add('beer')
+    div.style = `
+       display: flex
+       flex-direction: column
+    `
+    const handleCLick = async () => {
+      const info = await getBeerDetails(punkapi)
+      console.log(info)
+    }
+
+    const img = document.createElement('img')
+    img.src = Poster
+
+    const p = document.createElement('p')
+    const span = document.createElement('span')
+    span.textContent = movie.Title
+    p.append(span)
+
+    img.addEventListener('click', () => handleCLick(punkapi))
+    span.addEventListener('click', () => handleCLick(punkapi))
+
+
+    div.append(img, p)
+    beerList.append(div)
+  }
+}
