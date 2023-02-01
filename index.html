@@ -48,9 +48,16 @@
     <h1>Recipes</h1>
     <div class="search-section">
       <form>
-        <input type="text" id="blank" placeholder="Brew Name">
+        <label for="dropdown" id="dropdown">Search By:</label>
+        <select name="dropdown" id="downdown">
+          <option value="Brand Name">Brand Name</option>
+          <option value="Ingredients">Ingredients</option>
+          <option value="Flavors">Flavors</option>
+          <!-- <option value="Brand Name"></option> -->
+        </select>
+        <input type="text" id="blank" placeholder="Search ">
 
-        <button id="search" type="submit">Search</button>
+        <button id="search" type="submit">Enter</button>
       </form>
     </div>
     <section class="beer-name">

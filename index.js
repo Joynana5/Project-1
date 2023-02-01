@@ -78,3 +78,4 @@ function filterFunctionality(e) {
     : (notFound.style.display = 'none');
 
 }
+
