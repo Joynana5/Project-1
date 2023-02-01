@@ -83,15 +83,14 @@ async function getBrand(beer_name = 'Buzz') {
     console.log('');
   }
 }
+form.addEventListener('submit', async e => {
+  e.preventDefault()
+  const beer = await getBrand(input.value)
+  console.log(beer)
+  // renderList(beer)
+})
+
+
+
 getBrand()
 
-// const pick = 0
-// switch (url) {
-//   case beer_name:
-//     console.log(`https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`)
-//   case ingrediants:
-//     console.log(`https://api.punkapi.com/v2/beers?&beer_name=${hops}`);
-//   case flavors: 
-//     console.log(`https://api.punkapi.com/v2/beers?&beer_name=${id}`);
-// }
-// pick()
