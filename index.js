@@ -67,15 +67,21 @@ function filterFunctionality(e) {
 
 document.getElementById('submit').addEventListener('click', (e) => {
   e.preventDefault()
-let seachinput = document.getElementById('searchinput').value
+  let searchinput = document.getElementById('searchinput').value
+  let dropdown = document.getElementById('dropdown').value
+  let tempURL = ''
+  switch (dropdown) {
+    case 'brandName': `https://api.punkapi.com/v2/beers?&beer_name=${searchinput}`
+      getData(tempURL)
+      break;
+    case 'ABV': `https://api.punkapi.com/v2/beers?&abv_gt=${searchinput}`
+      getData(tempURL)
+      break;
+    case 'EBC': `https://api.punkapi.com/v2/beers?&ebc_gt=${searchinput}`
+      getData(tempURL)
+      break;
+  }
 })
-let dropdown = document.getElementById('dropdown').value
-let tempURL = ''
-switch (dropdown) {
-  case 'brandName': `https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`
-  case 'ingredients': ``
-}
-
 
 // ocument.getElementById('submit').addEventListener('click', (e) => {
 //   e.preventDefault()
@@ -113,29 +119,8 @@ switch (dropdown) {
 // }
 
 
-async function getBrand(beer_name = 'Buzz') {
-  const url = `https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`
-
-  try {
-    const res = await fetch(url)
-    const json = await res.json()
-    console.log(json);
-    return json;
-
-  } catch (error) {
-    console.log('');
-  }
+async function getData(tempURL) {
+  const res = await fetch(`${tempURL}`)
+  const json = await res.json()
+  console.log(json._embedded.events);
 }
-form.addEventListener('submit', async e => {
-  e.preventDefault()
-  const beer = await getBrand(input.value)
-  console.log(beer)
-  // renderList(beer)
-})
-
-getBrand()
-
-
-
-
-
