@@ -37,7 +37,7 @@ const search = document.querySelector('#search');
 // const todos = document.querySelectorAll('ul li');
 const notFound = document.querySelector('#notFound');
 
-search.addEventListener('keyup', filterFunctionality);
+// search.addEventListener('keyup', filterFunctionality);
 function filterFunctionality(e) {
   let searching = e.target.value.toLowerCase();
 
@@ -64,11 +64,54 @@ function filterFunctionality(e) {
 
 //searching field 
 
-const input = document.getElementById('blank')
-const button = document.getElementById('search')
-const beerList = document.querySelector('.beer-list div')
-const form = document.querySelector('form')
-const details = document.getElementById('details')
+
+document.getElementById('submit').addEventListener('click', (e) => {
+  e.preventDefault()
+let seachinput = document.getElementById('searchinput').value
+})
+let dropdown = document.getElementById('dropdown').value
+let tempURL = ''
+switch (dropdown) {
+  case 'brandName': `https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`
+  case 'ingredients': ``
+}
+
+
+// ocument.getElementById('submit').addEventListener('click', (e) => {
+//   e.preventDefault()
+//   let searchinput = document.getElementById('searchinput').value
+//   let dropdown = document.getElementById('dropdown').value
+//   let tempURL = ''
+
+//   switch (dropdown) {
+//     case 'keyword':
+//       tempURL = `${url}${APIKey}=*&keyword=${searchinput}`
+//       getData(tempURL)
+//       break;
+//     case 'postalCode':
+//       tempURL = `${url}${APIKey}=*&postalCode=${searchinput}`
+//       getData(tempURL)
+//       break;
+//     case 'city':
+//       tempURL = `${url}${APIKey}=*&city=${searchinput}`
+//       getData(tempURL)
+
+//       break;
+
+//     default:
+//     // code block
+//   }
+
+
+
+// })
+
+// async function getData(tempURL) {
+//   let res = await fetch(`${tempURL}`)
+//   let json = await res.json()
+//   console.log(json._embedded.events)
+// }
+
 
 async function getBrand(beer_name = 'Buzz') {
   const url = `https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`
@@ -90,7 +133,9 @@ form.addEventListener('submit', async e => {
   // renderList(beer)
 })
 
-
-
 getBrand()
+
+
+
+
 
