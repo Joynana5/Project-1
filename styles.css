@@ -14,9 +14,9 @@ p {
 }
 
 /* Hide the images by default */
-/* .mySlides {
-  display: 
-} */
+.mySlides {
+  display: inline-block;
+}
 
 /* Add a pointer when hovering over the thumbnail images */
 .cursor {

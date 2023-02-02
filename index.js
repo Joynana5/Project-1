@@ -57,102 +57,44 @@ function filterFunctionality(e) {
   });
 
   result === true
-    ? (notFound.style.display = 'block')
-    : (notFound.style.display = 'none');
-
+    ? (notFound.style.display = 'block') : (notFound.style.display = 'none');
 }
 
 //searching field 
 
 
+
 document.getElementById('submit').addEventListener('click', (e) => {
   e.preventDefault()
-  let searchinput = document.getElementById('searchinput').value
+
+  let value = document.getElementById('searchinput').value
   let dropdown = document.getElementById('dropdown').value
   let tempURL = ''
-
-  
+  //+value will return a numner for ebc and abv
+  //tyoeof vales in console log will let you know what tyoe of data is in there,
+  console.log(value, dropdown)
   switch (dropdown) {
-    case 'brandName': `https://api.punkapi.com/v2/beers?&beer_name=${searchinput}`
-      debugger
+    case 'brandName':
+      tempURL = `https://api.punkapi.com/v2/beers?&beer_name=${value}`
       getData(tempURL)
       break
-    case 'ABV': `https://api.punkapi.com/v2/beers?&abv_gt=${searchinput}`
-      debugger
+    case 'ABV':
+      tempURL = `https://api.punkapi.com/v2/beers?&abv_gt=${value}`
       getData(tempURL)
       break
-    case 'EBC': `https://api.punkapi.com/v2/beers?&ebc_gt=${searchinput}`
+    case 'EBC':
+      tempURL = `https://api.punkapi.com/v2/beers?&ebc_gt=${value}`
       getData(tempURL)
       break
 
-    // default:
+    default:
     //  code block
   }
+
 })
 async function getData(tempURL) {
   let res = await fetch(`${tempURL}`)
   let json = await res.json()
   console.log(json)
-
 }
 
-
-
-
-// ocument.getElementById('submit').addEventListener('click', (e) => {
-//   e.preventDefault()
-//   let searchinput = document.getElementById('searchinput').value
-//   let dropdown = document.getElementById('dropdown').value
-//   let tempURL = ''
-
-//   switch (dropdown) {
-//     case 'keyword':
-//       tempURL = `${url}${APIKey}=*&keyword=${searchinput}`
-//       getData(tempURL)
-//       break;
-//     case 'postalCode':
-//       tempURL = `${url}${APIKey}=*&postalCode=${searchinput}`
-//       getData(tempURL)
-//       break;
-//     case 'city':
-//       tempURL = `${url}${APIKey}=*&city=${searchinput}`
-//       getData(tempURL)
-
-//       break;
-
-//     default:
-//     // code block
-//   }
-
-
-
-// })
-
-// async function getData(tempURL) {
-//   let res = await fetch(`${tempURL}`)
-//   let json = await res.json()
-//   console.log(json._embedded.events)
-// }
-
-
-// async function getBrand(beer_name = 'Buzz') {
-//   const url = `https://api.punkapi.com/v2/beers?&beer_name=${beer_name}`
-
-//   try {
-//     const res = await fetch(url)
-//     const json = await res.json()
-//     console.log(json);
-//     return json;
-
-//   } catch (error) {
-//     console.log('');
-//   }
-// }
-// form.addEventListener('submit', async e => {
-//   e.preventDefault()
-//   const beer = await getBrand(input.value)
-//   console.log(beer)
-//   // renderList(beer)
-// })
-
-// getBrand()
