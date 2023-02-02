@@ -60,9 +60,8 @@ function filterFunctionality(e) {
     ? (notFound.style.display = 'block') : (notFound.style.display = 'none');
 }
 
+
 //searching field 
-
-
 
 document.getElementById('submit').addEventListener('click', (e) => {
   e.preventDefault()
@@ -72,7 +71,7 @@ document.getElementById('submit').addEventListener('click', (e) => {
   let tempURL = ''
   //+value will return a numner for ebc and abv
   //tyoeof vales in console log will let you know what tyoe of data is in there,
-  console.log(value, dropdown)
+console.log(value, dropdown)
   switch (dropdown) {
     case 'brandName':
       tempURL = `https://api.punkapi.com/v2/beers?&beer_name=${value}`
@@ -96,5 +95,56 @@ async function getData(tempURL) {
   let res = await fetch(`${tempURL}`)
   let json = await res.json()
   console.log(json)
+  displayItems(json)
+  // return json;
 }
 
+async function displayItems(data) {
+  data.map((e) => {
+    console.log(e.image_url)
+    const motherdiv = document.querySelector('.display')
+    const div = document.createElement('div')
+    div.style.background = `url('${e.image_url}')`
+    div.setAttribute('class', 'poster')
+    motherdiv.appendChild(div)
+
+  })
+}
+
+
+
+
+
+// let field = document.getElementById('field')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//conditional logic --- maybe? make emty array to 
+//local storarte to save data in a cookie or in a browser to use the dta so it saves on refresh with an expirartion time. 
+///...
