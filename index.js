@@ -104,10 +104,10 @@ async function displayItems(data) {
     console.log(e.image_url)
     const motherdiv = document.querySelector('.display')
     const div = document.createElement('div')
-    div.style.background = `url('${e.image_url}')`
+    div.style.background = `url('${e.image_url}') no-repeat`
+    div.style.backgroundSize = 'contain' 
     div.setAttribute('class', 'poster')
     motherdiv.appendChild(div)
-
   })
 }
 
