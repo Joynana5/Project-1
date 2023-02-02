@@ -11,11 +11,15 @@ p {
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
+  align-items: center;
+
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: inline-block;
+  justify-content: center;
+  transition: all ;
+  margin: 32px 0;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
