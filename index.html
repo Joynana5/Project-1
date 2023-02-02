@@ -46,19 +46,20 @@
     </div>
 
     <h1>Recipes</h1>
-    <form>
-      <label for="dropdown">Search By:</label>
-      <select name="dropdown" id="dropdown">
-        <option value="brandName">Name</option>
-        <option value="ABV">ABV Percent</option>
-        <option value="EBC">Color Range</option>
-        <!-- <option value="Brand Name"></option> -->
-      </select>
-      <input type="text" id="searchinput" placeholder="Search ">
+    <div class="search-section">
+      <form>
+        <label for="dropdown">Search By:</label>
+        <select name="dropdown" id="dropdown">
+          <option value="brandName">Name</option>
+          <option value="ABV">ABV (Alcohol By Volume) Range</option>
+          <option value="IBU">Bitterness Range</option>
+          <!-- <option value="Brand Name"></option> -->
+        </select>
+        <input type="text" id="blank" placeholder="Search ">
 
-      <button id="submit" type="submit">Enter</button>
-    </form>
-
+        <button id="searchinput" type="submit">Enter</button>
+      </form>
+    </div>
     <section class="beer-name">
       <div id="detail"></div>
       <h2>Selection</h2>
