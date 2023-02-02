@@ -8,12 +8,13 @@
   <title>Twin Brew</title>
 
   <script src="index.js" defer></script>
-  <link rel="stylesheet" href="styles.css" </head>
+  <link rel="stylesheet" href="styles.css">
+ </head>
 
 <body>
   <div class="firstSec">
     <a class="recipes" href="#recipes">Recipes</a>
-    <a class="ingredients" href="#igredients">Ingredients</a>
+    <a class="ingredients" href="#ingredients">Ingredients</a>
     <a class="local" href="#local">Local Brew</a>
   </div>
 
@@ -51,13 +52,13 @@
         <label for="dropdown">Search By:</label>
         <select name="dropdown" id="dropdown">
           <option value="brandName">Name</option>
-          <option value="ABV">ABV (Alcohol By Volume) Range</option>
-          <option value="IBU">Bitterness Range</option>
+          <option value="ABV">ABV Percent </option>
+          <option value="EBC">Color Range</option>
           <!-- <option value="Brand Name"></option> -->
         </select>
-        <input type="text" id="blank" placeholder="Search ">
+        <input type="text" id="searchinput" placeholder="Search">
 
-        <button id="searchinput" type="submit">Enter</button>
+        <button id="submit" type="submit">Enter</button>
       </form>
     </div>
     <section class="beer-name">
