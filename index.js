@@ -107,7 +107,13 @@ async function displayItems(data) {
     const img = document.createElement('img');
     let beerName = document.createElement('div')
     beerName.setAttribute('class', 'beerName')
-    beerName.innerText = e.name
+    beerName.innerText = e.name;
+
+    const p = document.createElement('p')
+    const span = document.createElement('span')
+    span.textContent = e.name
+    div.append(span)
+
     img.classList.add('beer')
     img.src = e.image_url;
     div.style.backgroundSize = 'contain'
@@ -119,10 +125,7 @@ async function displayItems(data) {
 }
 
 
-// const p = document.createElement('p')
-// const span = document.createElement('span')
-// span.textContent = beer.name
-// p.append(span)
+
 
 
 
