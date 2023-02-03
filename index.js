@@ -91,16 +91,20 @@ document.getElementById('submit').addEventListener('click', (e) => {
   }
 
 })
+
+// let data;
+
 async function getData(tempURL) {
   let res = await fetch(`${tempURL}`)
   let json = await res.json()
   console.log(json)
   displayItems(json)
+  // data = json
   // return json;
 }
 
 async function displayItems(data) {
-  data.map((e, i) => {
+  data.forEach((e, i) => {
     // console.log(e.image_url)
     const motherdiv = document.querySelector('.display')
     const div = document.createElement('div')
@@ -128,15 +132,58 @@ async function displayItems(data) {
 
   document.querySelectorAll('.poster')
     .forEach(el => {
-      console.log(el);
       el.addEventListener('click', (e) => {
-        console.log(e.target.getAttribute('value'))
+        const value = e.target.getAttribute('value')
+        console.log(value)
+        console.log(data[value]);
+        // el.getElements
+        modalContent.innerHTML = ''
+        const title = document.createElement('span')
+        const description = document.createElement('p')
+        const proof = document.createElement('p')
+        const parings = document.createElement('p')
+        const ingredients = document.createElement('p')
 
+        title.innerHTML = data[value].name
+        description.innerHTML = data[value].description
+        proof.innerHTML = data[value].abv
+        // parings.innerHTML = data[value].food_paring.toString()
+        // ingredients.innerHTML = data[value].
 
+        modalContent.appendChild(title)
+        modalContent.appendChild(description)
+        modalContent.appendChild(proof)
+        // modal.appendChild(parings)
 
-
+        modal.style.display = "block";
       })
     }
-    )
+  )
 }
 
+
+// Get the modal
+const modal = document.getElementById("modal");
+const modalContent = document.querySelector('.modal-content')
+// Get the button that opens the modal
+// const btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+// btn.onclick = function () {
+//   modal.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
