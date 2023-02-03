@@ -100,16 +100,19 @@ async function getData(tempURL) {
 }
 
 async function displayItems(data) {
-  data.map((e) => {
+  data.map((e, i) => {
     // console.log(e.image_url)
     const motherdiv = document.querySelector('.display')
     const div = document.createElement('div')
+    div.setAttribute('value', `${i}`)
+
     const img = document.createElement('img');
+
     let beerName = document.createElement('div')
     beerName.setAttribute('class', 'beerName')
     beerName.innerText = e.name;
 
-    const p = document.createElement('p')
+    // const p = document.createElement('p')
     const span = document.createElement('span')
     span.textContent = e.name
     div.append(span)
@@ -122,17 +125,18 @@ async function displayItems(data) {
     motherdiv.appendChild(div)
     div.appendChild(img)
   })
-    
-  document.querySelectorAll('.poster').forEach(el => {
-    el.addEventListener('mouseover'), (e) => {
-      e.target.classList.add('active').addEventListener('mouseout', (e) => {
-        e.target.classList.remove('active')
+
+  document.querySelectorAll('.poster')
+    .forEach(el => {
+      console.log(el);
+      el.addEventListener('click', (e) => {
+        console.log(e.target.getAttribute('value'))
+
+
+
+
       })
     }
-    const div = document.createElement('model')
-    const span = document.createElement('modelArea')
-
-
-
-  })
+    )
 }
+
