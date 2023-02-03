@@ -71,7 +71,7 @@ document.getElementById('submit').addEventListener('click', (e) => {
   let tempURL = ''
   //+value will return a numner for ebc and abv
   //tyoeof vales in console log will let you know what tyoe of data is in there,
-console.log(value, dropdown)
+  console.log(value, dropdown)
   switch (dropdown) {
     case 'brandName':
       tempURL = `https://api.punkapi.com/v2/beers?&beer_name=${value}`
@@ -101,28 +101,25 @@ async function getData(tempURL) {
 
 async function displayItems(data) {
   data.map((e) => {
-    console.log(e.image_url)
+    // console.log(e.image_url)
     const motherdiv = document.querySelector('.display')
     const div = document.createElement('div')
     const img = document.createElement('img');
     img.classList.add('beer')
     img.src = e.image_url;
-    // div.style.background = `url('${e.image_url}') no-repeat`
-    div.style.backgroundSize = 'contain' 
+    div.style.backgroundSize = 'contain'
     div.setAttribute('class', 'poster')
     motherdiv.appendChild(div)
     div.appendChild(img)
+
   })
 }
 
 
-
-
-
-// let field = document.getElementById('field')
-
-
-
+// const p = document.createElement('p')
+// const span = document.createElement('span')
+// span.textContent = beer.name
+// p.append(span)
 
 
 
@@ -149,6 +146,4 @@ async function displayItems(data) {
 
 
 
-//conditional logic --- maybe? make emty array to 
-//local storarte to save data in a cookie or in a browser to use the dta so it saves on refresh with an expirartion time. 
-///...
+

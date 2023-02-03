@@ -1,114 +1,146 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+ @import url("https://use.typekit.net/kac8vdd.css") * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+ }
 
-p {
-  color: darkgoldenrod;
-}
+ p {
+   color: rgb(255, 254, 251);
+ }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-  align-items: center;
+ /* Position the image container (needed to position the left and right arrows) */
+ .container {
+   position: relative;
+   align-items: center;
 
-}
+ }
 
-/* Hide the images by default */
-.mySlides {
-  justify-content: center;
-  transition: all ;
-  margin: 32px 0;
-}
+ /* Hide the images by default */
+ .mySlides {
+   justify-content: center;
+   transition: all;
+   margin: 32px 0;
+ }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
+ /* Add a pointer when hovering over the thumbnail images */
+ .cursor {
+   cursor: pointer;
+ }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
+ /* Next & previous buttons */
+ .prev,
+ .next {
+   cursor: pointer;
+   position: absolute;
+   top: 40%;
+   width: auto;
+   padding: 16px;
+   margin-top: -50px;
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+   border-radius: 0 3px 3px 0;
+   user-select: none;
+   -webkit-user-select: none;
+ }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+ /* Position the "next button" to the right */
+ .next {
+   right: 0;
+   border-radius: 3px 0 0 3px;
+ }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+ /* On hover, add a black background color with a little bit see-through */
+ .prev:hover,
+ .next:hover {
+   background-color: rgba(0, 0, 0, 0.8);
+ }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
+ /* Number text (1/3 etc) */
+ .numbertext {
+   color: #f2f2f2;
+   font-size: 12px;
+   padding: 8px 12px;
+   position: absolute;
+   top: 0;
+ }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
+ /* Container for image text */
+ .caption-container {
+   text-align: center;
+   background-color: #222;
+   padding: 2px 16px;
+   color: white;
+ }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+ .row:after {
+   content: "";
+   display: table;
+   clear: both;
+ }
 
-Six columns side by side .column {
-  float: left;
-  width: 16.66%;
-}
+ Six columns side by side .column {
+   float: left;
+   width: 16.66%;
+ }
 
-.display {
-  /* height: 300px;
+ .display {
+   /* height: 300px;
   width: 300px; */
-  margin: 20px;
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  gap: 20px
-  /* justify-content: center; */
-  /* align-items: center; */
-}
+   margin: 20px;
+   display: flex;
+   /* flex-direction: column; */
+   flex-wrap: wrap;
+   gap: 20px
+     /* justify-content: center; */
+     /* align-items: center; */
+ }
 
-.poster {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin: 0 auto; */
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  border-radius: 10px;
-  flex-grow: 1;
-  width: 33%;
-  height: 200px;
-  align-self: center;
-}
+ .poster {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   /* margin: 0 auto; */
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+   border-radius: 10px;
+   flex-grow: 1;
+   width: 33%;
+   height: 200px;
+   align-self: center;
+ }
 
-.beer {
-  height: 80%;
-}
+ .beer {
+   height: 80%;
+ }
+
+ h1 {
+   font-family: "bungee", sans-serif;
+   font-weight: 00;
+   font-style: normal;
+ }
+
+ h2,
+ .search-section,
+ #dropdown {
+   font-family: "utopia-std-headline", serif;
+   font-weight: 500;
+   font-style: normal;
+ }
+
+ #submit,
+ #searchinput {
+   font-family: "bungee", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+ }
+
+ div .firstSec {
+   font-family: "bungee", sans-serif;
+   font-weight: 700;
+   font-style: normal;
+   color: #222
+ }
+
+ a {
+   text-decoration: none;
+ }
