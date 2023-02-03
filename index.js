@@ -122,34 +122,17 @@ async function displayItems(data) {
     motherdiv.appendChild(div)
     div.appendChild(img)
   })
+    
+  document.querySelectorAll('.poster').forEach(el => {
+    el.addEventListener('mouseover'), (e) => {
+      e.target.classList.add('active').addEventListener('mouseout', (e) => {
+        e.target.classList.remove('active')
+      })
+    }
+    const div = document.createElement('model')
+    const span = document.createElement('modelArea')
+
+
+
+  })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
