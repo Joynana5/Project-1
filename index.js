@@ -105,13 +105,16 @@ async function displayItems(data) {
     const motherdiv = document.querySelector('.display')
     const div = document.createElement('div')
     const img = document.createElement('img');
+    let beerName = document.createElement('div')
+    beerName.setAttribute('class', 'beerName')
+    beerName.innerText = e.name
     img.classList.add('beer')
     img.src = e.image_url;
     div.style.backgroundSize = 'contain'
     div.setAttribute('class', 'poster')
+    img.appendChild(beerName)
     motherdiv.appendChild(div)
     div.appendChild(img)
-
   })
 }
 
