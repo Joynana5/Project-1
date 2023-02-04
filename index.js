@@ -137,7 +137,7 @@ async function displayItems(data) {
         console.log(value)
         console.log(data[value]);
         // el.getElements
-        modalContent.innerHTML = ''
+        modalContent.innnerHTML = ''
         const title = document.createElement('span')
         const description = document.createElement('p')
         const proof = document.createElement('p')
@@ -158,7 +158,7 @@ async function displayItems(data) {
         modal.style.display = "block";
       })
     }
-  )
+    )
 }
 
 

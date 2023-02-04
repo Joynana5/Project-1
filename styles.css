@@ -120,30 +120,45 @@ Six columns side by side .column {
   pointer-events: none
 }
 
-h1 {
+.title {
   font-family: "poiret-one", sans-serif;
   font-weight: 100;
   font-style: normal;
   font-size: 75px;
   text-align: center;
 }
-
-h2,
-.search-section,
-#dropdown {
-  font-family: "source-sans-pro", sans-serif;
+.title2{
+    font-family: "poiret-one", sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 50px;
+      text-align: center;
+}
+.title3{
+font-family: "source-sans-pro", sans-serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 2rem;
+  text-align: center;
+}
+#dropdown {
+  font-family: "bungee", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    align-items: center
 }
 
-#submit,
 #searchinput {
-  font-family: "source-sans-pro", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-  ;
+  font-family: "bungee", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: black;
+    align-items: center
 }
-
+#submit{
+  font-size: 1rem;
+}
 div .firstSec {
   font-family: "bungee", sans-serif;
   font-weight: 700;
@@ -151,13 +166,26 @@ div .firstSec {
   color: black;
   align-items: center;
 }
+form{
+  margin: 20px;
+  padding: 30px, 90px;
+  align-content: space-between;
+  display: flex;
 
+}
 a {
   text-decoration: none;
   color: black;
   padding: 20px;
   align-content: center;
 }
+
+label{
+  font-family: "source-sans-pro", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
 
 .modal {
   display: none;
@@ -212,8 +240,11 @@ a {
 
 span {
   font-family: "bungee", sans-serif;
-  font-weight: 800;
+  font-weight: 300;
   font-style: normal;
   color: black;
   display: center;
+  position: static;
+  align-items: flex-start;
+  font-size: 1rem;;
 }
