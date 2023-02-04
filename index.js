@@ -134,7 +134,7 @@ async function displayItems(data) {
     .forEach(el => {
       el.addEventListener('click', (e) => {
         const value = e.target.getAttribute('value')
-        console.log(value)
+        // console.log(value)
         console.log(data[value]);
         // el.getElements
         modalContent.innnerHTML = ''

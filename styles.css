@@ -1,18 +1,24 @@
-@import url("https://use.typekit.net/htj6iny.css") * {
+@import 'https://fonts.googleapis.com/css?family=BioRhyme:700|Eczar:800|Rubik:400,400i,700';
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+​header {
+  margin: 5%;
+}
+
+/* modal text description  */
 p {
-  /* color: rgb(255, 254, 251); */
+  /* color: rgb(125, 100, 27); */
 }
 
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
   align-items: center;
-
 }
 
 /* Hide the images by default */
@@ -96,6 +102,7 @@ Six columns side by side .column {
     /* align-items: center; */
 }
 
+/* end of slideshow & start of beer items  */
 .poster {
   display: flex;
   justify-content: center;
@@ -107,7 +114,11 @@ Six columns side by side .column {
   width: 33%;
   height: 200px;
   align-self: center;
+}
 
+.poster:hover {
+  transition: all .2s ease-in-out;
+  transform: scale(1.1)
 }
 
 .poster span {
@@ -120,45 +131,70 @@ Six columns side by side .column {
   pointer-events: none
 }
 
+/* twin-brew heading */
 .title {
-  font-family: "poiret-one", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 75px;
+  font-family: 'BioRhyme', serif;
+  font-size: 5rem;
+  font-weight: 700;
   text-align: center;
+
 }
-.title2{
-    font-family: "poiret-one", sans-serif;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 50px;
-      text-align: center;
+
+#caption {
+  font-family: Eczar, serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  color: #efefef;
+  text-transform: uppercase;
+  text-align: center;
+  padding: .5rem;
 }
-.title3{
-font-family: "source-sans-pro", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+.title2 {
+  font-family: Eczar, serif;
+  font-weight: 800;
+  font-size: 1.5em;
+  color: #4b1717;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+
+.title3 {
+  font-family: Eczar, serif;
+  font-weight: 800;
   font-size: 2rem;
   text-align: center;
 }
+
+/* search by text */
+label {
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1rem;
+}
+
 #dropdown {
   font-family: "bungee", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: black;
-    align-items: center
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+  align-items: center
 }
 
 #searchinput {
   font-family: "bungee", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: black;
-    align-items: center
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+  align-items: center
 }
-#submit{
+
+#submit {
   font-size: 1rem;
 }
+
 div .firstSec {
   font-family: "bungee", sans-serif;
   font-weight: 700;
@@ -166,26 +202,24 @@ div .firstSec {
   color: black;
   align-items: center;
 }
-form{
+
+form {
   margin: 20px;
   padding: 30px, 90px;
   align-content: space-between;
   display: flex;
 
 }
+
 a {
   text-decoration: none;
-  color: black;
+  color: rgb(15, 14, 14);
   padding: 20px;
   align-content: center;
+  font-family: "bungee", sans-serif;
+  font-weight: 700;
+  font-style: normal
 }
-
-label{
-  font-family: "source-sans-pro", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
 
 .modal {
   display: none;
@@ -236,15 +270,19 @@ label{
   color: black;
   text-decoration: none;
   cursor: pointer;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
 }
 
 span {
-  font-family: "bungee", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  color: black;
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(4, 1, 1);
   display: center;
-  position: static;
-  align-items: flex-start;
-  font-size: 1rem;;
+  position: absolute;
+  font-size: 1em;
+  overflow: auto;
+  flex: inherit;
+  align-self: flex-start;
 }
