@@ -2,7 +2,7 @@
 
 ## Project Name: ♊︎ Brew
                                                  
-In this project, I will use data aquired from multiple sources to build a system that recommends beer recipies and local breweries to user based on their input. The recipies, food-pairing suggestions, tips, and brewery location information were all encoded using open sorced APIs. 
+In this project, I will use data aquired from PunkAPI to showcase a variety of beers to users based on their input. Twin brew allows users to search by beer name, type, alcohol content and color. 
 
 Users must at least 21 years old to use this app! Please drink responsibly. 
 
@@ -34,17 +34,17 @@ https://api.punkapi.com/
 
 ## MVP 
 
-- Provide recipies for a variety of beer 
-- Best practice tips to help beginners and experts a like to make a profesional tasting brew!
-- Random brew suggestions for users who may be in the mood to try something new.
-- Custom list options 
+- Provide users with a wide selection of breers.
+- When selected, model box appears providing additional information about the beer.
+- Weekly highlight listed on mainn page to offer suggestions for users who may be in the mood to try something new.
+
 
 ## Post MVP
 
 - Local brewery suggestions based on the users location
 - Rating option
-
-
+- Best practice tips to help beginners and experts a like to make a profesional tasting brew!
+- Custom list options 
 
 ## Plan 
 
