@@ -117,9 +117,9 @@ async function displayItems(data) {
     beerName.innerText = e.name;
 
     // const p = document.createElement('p')
-    const span = document.createElement('span')
-    span.textContent = e.name
-    div.append(span)
+    const span1 = document.createElement('span')
+    span1.textContent = e.name
+    div.append(span1)
 
     img.classList.add('beer')
     img.src = e.image_url;
@@ -137,7 +137,7 @@ async function displayItems(data) {
         // console.log(value)
         console.log(data[value]);
         // el.getElements
-        modalContent.innnerHTML = ''
+        modalContent.innerHTML = ''
         const title = document.createElement('span')
         const description = document.createElement('p')
         const proof = document.createElement('p')
@@ -147,13 +147,14 @@ async function displayItems(data) {
         title.innerHTML = data[value].name
         description.innerHTML = data[value].description
         proof.innerHTML = data[value].abv
-        // parings.innerHTML = data[value].food_paring.toString()
-        // ingredients.innerHTML = data[value].
+        // parings.innerHTML = data[value].food_paring
+        // ingredients.innerHTML = data[value].ingredients.yeast
 
         modalContent.appendChild(title)
         modalContent.appendChild(description)
         modalContent.appendChild(proof)
         // modal.appendChild(parings)
+        // modal.appendChild(ingredients)
 
         modal.style.display = "block";
       })
