@@ -141,13 +141,15 @@ Six columns side by side .column {
 .title {
   font-family: Eczar, serif;
   font-weight: 800;
-  font-size: 5em;
+  font-size: 5rem;
   text-align: center;
+  margin: 20px;
 }
 
 #caption {
-  font-family: Eczar, serif;
-  font-weight: 800;
+  font-family: 'BioRhyme', serif;
+  font-size: 5em;
+  font-weight: 700;
   font-size: 1.5em;
   color: #efefef;
   text-transform: uppercase;
@@ -157,27 +159,28 @@ Six columns side by side .column {
 
 .title2 {
   font-family: Eczar, serif;
-  font-weight: 800;
-  font-size: 1.5em;
+  font-weight: 600;
+  font-size: 2rem;
   color: black;
   text-transform: uppercase;
   text-align: center;
   padding: 20px;
+  margin: 20px;
 }
 
 .title3 {
-  font-family: Eczar, serif;
-  font-weight: 800;
-  font-size: 2rem;
+  font-family: Rubik, sans-serif;
+  font-weight: 700;
+  font-style: italic;
   text-align: center;
 }
 
 /* search by text */
 label {
   font-family: Rubik, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
+  font-size: .85em;
   font-style: italic;
-  font-size: 1rem;
 }
 
 #dropdown {
@@ -305,11 +308,12 @@ span1 {
 }
 
 .numbertext {
-  font-family: Rubik, sans-serif;
-  font-weight: 700;
-  font-size: .85em;
-  position: inherit;
+  position: absolute;
   margin-top: 50px;
- 
+}
 
+span {
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  font-style: italic;
 }
